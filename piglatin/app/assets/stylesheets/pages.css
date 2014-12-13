@@ -1,0 +1,28 @@
+.form-holder {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5em;
+	width: 37em;
+}
+
+.main-image img {
+	width: 30em;
+	margin-left: auto;
+	margin-right: auto;
+	border: 7px ridge #FFD700 ;
+}
+
+.title-text {
+	float: left;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20em;
+}
+
+.title-text p {
+	font-family: 'JaneAusten', serif;
+	font-size: 3em;
+	text-align: center;
+}
+

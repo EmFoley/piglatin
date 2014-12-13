@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	margin: 0;
+	background-color: #F8ECC2;
+}
+
+.container {
+	display: inline;
+	overflow: hidden;
+	
+}
+
+/*FONTS*/
+
+@font-face {
+	font-family: 'JaneAusten';
+	src: url('JaneAust.ttf') format('truetype');
+}
