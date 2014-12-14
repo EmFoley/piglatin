@@ -17,6 +17,11 @@ ActiveRecord::Schema.define(version: 20141213235908) do
   enable_extension "plpgsql"
 
   create_table "pairs", force: true do |t|
+    t.string   "pig_latin"
+    t.string   "english"
+    t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

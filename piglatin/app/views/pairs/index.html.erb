@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="title-text">
+		<p>Professor of</p><p>Pig Latin</p>
+	</div>
+	<div class="main-image">
+			<%= image_tag("RoyalPigReads.jpg")%>
+	</div>
+	<div class="form" id="picker-form">
+		<%= form_for(@pair, remote: true) do %>
+		<%= f.radio_button :pair, "english" %>
+		<%= f.label :english, "English to Pig Latin" %>
+		<%= f.radio_button :pair, "piglatin" %>
+		<%= f.label :pig_latin, "Pig Latin to English" %>
+		<%= f.text_field :pair %>
+		<%= f.submit "Translate, please!"%>
+		<% end %>
+	</div>
+	<div id="translations">
+
+	</div>
+
+</div>
