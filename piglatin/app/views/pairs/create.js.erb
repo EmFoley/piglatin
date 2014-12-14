@@ -1,1 +1,1 @@
-$('#translations').append('<%= @pair.english, @pair.pig_latin, @pair.key %>');
+$('#translations').html("<%= escape_javascript(render @pair) %>");
