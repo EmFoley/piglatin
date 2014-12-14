@@ -1,11 +1,18 @@
 <div class="container">
-<div class="title-text">
-	<p>Professor of</p><p>Pig Latin</p>
-</div>
-<div class="form-holder">
-	<div class="main-image">
-		<%= image_tag("RoyalPigReads.jpg")%>
+	<div class="title-text">
+		<p>Professor of</p><p>Pig Latin</p>
 	</div>
-</div>
+	<div class="main-image">
+			<%= image_tag("RoyalPigReads.jpg")%>
+	</div>
+	<div class="form">
+		<%= form_tag( url: pages_path ) do %>
+			<% if %>
+			<% end %>
+		<%= text_field_tag :pig_latin %>
+		<%= text_field_tag :english %>
+		<%= submit_tag "Translate, please!"%>
+		<% end %>
+	</div>
 
 </div>

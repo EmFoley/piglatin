@@ -26,3 +26,7 @@
 	text-align: center;
 }
 
+.form {
+	float: right;
+	clear: both;
+}
