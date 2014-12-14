@@ -6,7 +6,7 @@
 			<%= image_tag("RoyalPigReads.jpg")%>
 	</div>
 	<div class="form" id="picker-form">
-		<%= form_tag( url: pages_path ) do %>
+		<%= form_tag( url: pages_path, remote: true ) do %>
 		<%= radio_button_tag(:pair, "english", :class => "radio-button english-checked") %>
 		<%= label_tag(:english, "English to Pig Latin") %>
 		<%= radio_button_tag(:pair, "piglatin", :class => "radio-button pig-latin-checked") %>
