@@ -1,4 +1,4 @@
-.form-holder {
+.main-image {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5em;
@@ -9,7 +9,7 @@
 	width: 30em;
 	margin-left: auto;
 	margin-right: auto;
-	border: 7px ridge #FFD700 ;
+	border: 5px ridge #D6AD33 ;
 }
 
 .title-text {
