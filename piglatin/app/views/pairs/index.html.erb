@@ -6,12 +6,12 @@
 			<%= image_tag("RoyalPigReads.jpg")%>
 	</div>
 	<div class="form" id="picker-form">
-		<%= form_for(@pair, remote: true) do %>
-		<%= f.radio_button :pair, "english" %>
+		<%= form_for(@pair, remote: true) do |f| %>
+		<%= f.radio_button :english, "english" %>
 		<%= f.label :english, "English to Pig Latin" %>
-		<%= f.radio_button :pair, "piglatin" %>
+		<%= f.radio_button :pig_latin, "piglatin" %>
 		<%= f.label :pig_latin, "Pig Latin to English" %>
-		<%= f.text_field :pair %>
+		<%= f.text_field :english %>
 		<%= f.submit "Translate, please!"%>
 		<% end %>
 	</div>
