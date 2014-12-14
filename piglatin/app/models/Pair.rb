@@ -27,6 +27,7 @@ class Pair < ActiveRecord::Base
 		else
 			self.english = self.pig_latin.to_english
 		end
+		self.save
 	end
 
 end

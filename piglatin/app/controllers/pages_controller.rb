@@ -20,7 +20,7 @@ class PagesController < ApplicationController
 	end
 
 	def show
-		@pair = Pair.find(params[:key])
+		@pair = Pair.find(params[:id])
 	end
 	
 end
