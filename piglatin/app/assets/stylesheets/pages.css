@@ -29,4 +29,8 @@
 .form {
 	float: right;
 	clear: both;
+	width: 15em;
+	position: relative;
+	bottom: 20em;
+	right: 5em;
 }

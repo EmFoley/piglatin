@@ -7,8 +7,7 @@
 	</div>
 	<div class="form">
 		<%= form_tag( url: pages_path ) do %>
-			<% if %>
-			<% end %>
+		<%= select_tag(:pair, options_for_select([['English to Pig Latin', 1], ['Pig Latin to English', 2]])) %>
 		<%= text_field_tag :pig_latin %>
 		<%= text_field_tag :english %>
 		<%= submit_tag "Translate, please!"%>
