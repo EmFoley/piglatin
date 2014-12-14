@@ -1,5 +1,7 @@
 class Pair < ActiveRecord::Base
 
+	before_save :translate
+
 	def pigify(word)
 		back = word.split("")
 		first = back.slice!(0)
@@ -12,6 +14,19 @@ class Pair < ActiveRecord::Base
 
 	def piggiesfy(sentence)
 		sentence.split(/\s/).map { |x| pigify(x)}.join(" ")
+	end
+
+	def to_english(sentence)
+	end
+
+	private
+
+	def translate
+		if self.english
+			self.pig_latin = self.english.piggiesfy
+		else
+			self.english = self.pig_latin.to_english
+		end
 	end
 
 end

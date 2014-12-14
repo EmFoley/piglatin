@@ -9,7 +9,11 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		@pair = Pair.new(params[:pair])
+		if params[:radio_button] == 'english'
+			@pair = Pair.new(english: params[:pair][:english])
+		else
+			@pair = Pair.new(pig_latin: params[:pair][:pig_latin])
+		end	
 		if @pair.save
 			render partial: 'translations' 
 		end
