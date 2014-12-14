@@ -5,11 +5,13 @@
 	<div class="main-image">
 			<%= image_tag("RoyalPigReads.jpg")%>
 	</div>
-	<div class="form">
+	<div class="form" id="picker-form">
 		<%= form_tag( url: pages_path ) do %>
-		<%= select_tag(:pair, options_for_select([['English to Pig Latin', 1], ['Pig Latin to English', 2]])) %>
-		<%= text_field_tag :pig_latin %>
-		<%= text_field_tag :english %>
+		<%= radio_button_tag(:pair, "english", :class => "radio-button english-checked") %>
+		<%= label_tag(:english, "English to Pig Latin") %>
+		<%= radio_button_tag(:pair, "piglatin", :class => "radio-button pig-latin-checked") %>
+		<%= label_tag(:pig_latin, "Pig Latin to English") %>
+		<%= text_field_tag :pair %>
 		<%= submit_tag "Translate, please!"%>
 		<% end %>
 	</div>

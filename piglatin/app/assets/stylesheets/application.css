@@ -25,6 +25,14 @@ body {
 	
 }
 
+.hidden {
+	display: none;
+}
+
+.radio-button {
+	display: block;
+}
+
 /*FONTS*/
 
 @font-face {
