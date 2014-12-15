@@ -1,6 +1,11 @@
 class Pair < ActiveRecord::Base
-
 	before_save :translate
+
+	
+
+	def self.piggiesfy(sentence)
+		sentence.split(/\s/).map { |x| pigify(x)}.join(" ")
+	end
 
 	def pigify(word)
 		back = word.split("")
@@ -12,22 +17,22 @@ class Pair < ActiveRecord::Base
 		 	end
 	end
 
-	def piggiesfy(sentence)
-		sentence.split(/\s/).map { |x| pigify(x)}.join(" ")
+	def self.to_english
+		@pig_latin = self.pig_latin
 	end
-
-	def to_english(sentence)
-	end
-
-	private
 
 	def translate
 		if self.english
-			self.pig_latin = self.english.piggiesfy
+			self.pig_latin = self.class.piggiesfy(self.english)
 		else
 			self.english = self.pig_latin.to_english
 		end
 		self.save
 	end
 
+	private
+
+	def pair_params 
+		params.require(:pair).permit(:english, :pig_latin, :key)
+	end
 end
