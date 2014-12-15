@@ -18,5 +18,13 @@
 	<div id="translations">
 
 	</div>
+	
+	<div id="keybox">
+		<p>Got a key already?</p>
+		<%= form_tag(keyedpair_path, remote: true) do %>
+		<%= text_field_tag :key %>
+		<%= submit_tag "Show me the pair!" %>
+		<% end %>
+	</div>
 
 </div>

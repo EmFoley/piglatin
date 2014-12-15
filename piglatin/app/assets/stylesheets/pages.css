@@ -41,4 +41,14 @@
 	display: none;
 }
 
+#keybox {
+	float: right;
+	clear: both;
+	width: 18em;
+	position: relative;
+	bottom: 20em;
+	right: 5em;
+	text-align: left;
+	display: inline;
+}
 

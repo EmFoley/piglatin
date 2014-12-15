@@ -1,1 +1,1 @@
-$('#keybox').append('<%= @pair.english, @pair.pig_latin%>');
+$('#keybox').append("<%= escape_javascript(render @pair) %>");

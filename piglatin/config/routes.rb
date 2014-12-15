@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pairs#index'
-  resources :pairs, except: [:update, :destroy]
+  resources :pairs, except: [:update, :edit, :destroy]
+  get '/pairs/:id', to: 'pairs#show', as: 'keyedpair'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
