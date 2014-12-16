@@ -10,14 +10,9 @@ class PairsController < ApplicationController
 
 	def create
 		@pair = Pair.create(pair_params)
-		respond_to do |format|
-			if @pair.save
-			format.html do 
-				redirect_to root_path 
-			end
-		    format.js
+		if @pair.save
+		  render :template => '/pairs/_create.js.erb'
 		 end
-		end
 	end
 
 	def show
