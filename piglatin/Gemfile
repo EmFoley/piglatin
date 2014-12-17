@@ -19,11 +19,16 @@ group :assets do
 	gem 'coffee-rails'
 end
 
+group :development do
+	gem 'rails_db_info'
+end
+
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :test do 

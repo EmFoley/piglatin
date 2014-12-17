@@ -1,4 +1,6 @@
 class PairsController < ApplicationController
+	respond_to :json
+
 	def index
 		@pair = Pair.new
 		@pairs = Pair.all
@@ -9,13 +11,10 @@ class PairsController < ApplicationController
 	end
 
 	def create
-		@pair = Pair.create(pair_params)
-		respond_to do |format|
-		if @pair.save
-		  format.html
-		  format.js
-		end
-		end
+		english = pair_params[:english] || PigIt.to_english(pair_params[:pig_latin]) 
+		pig_latin = pair_params[:pig_latin] || PigIt.to_pig_latin(pair_params[:english]) 
+		pair = Pair.create(english: english, pig_latin: pig_latin)
+		respond_with pair
 	end
 
 	def show
@@ -23,7 +22,11 @@ class PairsController < ApplicationController
 		@keyed = Pair.where(key: params[:key])
 	end
 
-	def pair_params 
-		params.require(:pair).permit(:english, :pig_latin, :key)
-	end
+	private
+
+		def pair_params 
+			params.require(:pair).permit(:english, :pig_latin, :key)
+		end
+
+
 end

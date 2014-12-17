@@ -1,21 +1,23 @@
 module PigIt 
 
+	extend self
+
 	def pigify(word)
 		back = word.split("")
 		first = back.slice!(0)
-			 if !word.match(/^(a|e|i|o|u)/)		
-			 	print back.join(" ") + first + "ay"
-			 else
-			 	print back.join(" ") + first + "hay"
-			 end
+	 	if !word.match(/^(a|e|i|o|u)/)		
+	 		back.join("") + first + "ay" + " "
+	 	else
+	 		back.join("") + first + "hay" + " "
+	 	end
 	end
 
-	def piggiesfy(sentence)
+	def to_pig_latin(sentence)
 		sentence.split(/\s/).map { |x| pigify(x)}.join(" ")
 	end
 
 	def to_english
-		@pig_latin = self.pig_latin
+		# TODO: Implement this
 	end
 
 end

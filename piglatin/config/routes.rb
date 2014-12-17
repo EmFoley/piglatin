@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pairs#index'
-  resources :pairs, defaults: { format: 'json' }
-  get '/pairs/:id', to: 'pairs#show', as: 'keyedpair'
+  resources :pairs, except: [:edit, :destroy]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
