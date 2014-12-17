@@ -25,7 +25,7 @@ class Pair < ActiveRecord::Base
 		if @eng
 			@pig = piggiesfy(@eng)
 		else
-			@eng = @pig.to_english
+			@eng = to_english(@pig)
 		end
 	end
 
