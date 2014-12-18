@@ -16,13 +16,16 @@ module PigIt
 		sentence.split(/\s/).map { |x| pigify(x)}.join(" ")
 	end
 
-	def to_english
-		# TODO: Implement this
+	def anglify(word)
+		word.gsub!(/(ay)/, '')
+		back = word.split('')
+		first = back.slice!(-1)
+		english = back.insert(0,first).join()
 	end
 
-	# def self.search(key)
-	#   where("key like ?", "%{key}%")
-	# end
+	def to_english(sentence)
+		sentence.split(/\s/).map { |x| anglify(x)}.join("")
+	end
 end
 
 # pig
