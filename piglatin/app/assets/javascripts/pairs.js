@@ -3,10 +3,11 @@ $(document).ready(function(){
 		e.preventDefault()
 		$.post('/pairs', $(this).serialize())
 		  .done(function(response) {
-		  	$('#translations').append('<h1>' + response.english + " " + response.pig_latin + '</h1>')
+		  	$('#translations').append('<h1>' + response.english + " " + response.pig_latin + " " + response.key + '</h1>')
 		  })
 		  .fail(function() {
              // 
 		  })
 	})
+
 });

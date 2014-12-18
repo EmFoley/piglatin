@@ -13,7 +13,7 @@ class PairsController < ApplicationController
 	def create
 		english = pair_params[:english] || PigIt.to_english(pair_params[:pig_latin]) 
 		pig_latin = pair_params[:pig_latin] || PigIt.to_pig_latin(pair_params[:english]) 
-		pair = Pair.create(english: english, pig_latin: pig_latin)
+		pair = Pair.create(english: english, pig_latin: pig_latin, key: Faker::Number.number(4))
 		respond_with pair
 	end
 
