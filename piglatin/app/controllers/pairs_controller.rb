@@ -4,6 +4,7 @@ class PairsController < ApplicationController
 	def index
 		@pair = Pair.new
 		@pairs = Pair.all
+		@keyed = Pair.where(key: params[:key])
 	end
 
 	def new
@@ -19,7 +20,7 @@ class PairsController < ApplicationController
 
 	def show
 		@pair = Pair.find(params[:id])
-		@keyed = Pair.where(key: params[:key])
+		
 	end
 
 	private

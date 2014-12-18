@@ -5,7 +5,7 @@
 	<div class="main-image">
 			<%= image_tag("RoyalPigReads.jpg")%>
 	</div>
-	<div class="form" id="picker-form">
+	<div class="form">
 		<%= form_for(@pair) do |f| %>
 		<%= f.radio_button :english, "english" %>
 		<%= f.label :english, "English to Pig Latin" %>
@@ -17,6 +17,13 @@
 	</div>
 	<div id="translations">
 		
+	</div>
+	<div id="keyform">
+		<p>Enter the key in here, my friend, for translations you'd like to see again!</p>
+		<%= form_tag pairs_path do %>
+		<%= text_field_tag :search, params[:search]	%> 
+		<%= submit_tag "What was that pair again?" %>
+		<% end %>
 	</div>
 	
 
