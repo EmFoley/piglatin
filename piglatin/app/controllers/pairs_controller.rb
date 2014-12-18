@@ -3,8 +3,12 @@ class PairsController < ApplicationController
 
 	def index
 		@pair = Pair.new
-		@pairs = Pair.all
-		@keyed = Pair.where(key: params[:key])
+		# if params[:search]
+		# 	keypair = Pair.where(key: params[:search])
+		# 	respond_with keypair
+		# else
+		# 	# alert("Pair not found! Enter your phrase to translate at the top!")
+		# end
 	end
 
 	def new
