@@ -23,8 +23,7 @@ class PairsController < ApplicationController
 	end
 
 	def show
-		@pair = Pair.find(params[:id])
-		
+		@pair = Pair.find(params[:id])	
 	end
 
 	private
