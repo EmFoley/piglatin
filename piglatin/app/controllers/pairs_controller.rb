@@ -3,16 +3,12 @@ class PairsController < ApplicationController
 
 	def index
 		@pair = Pair.new
-		# if params[:search]
-		# 	keypair = Pair.where(key: params[:search])
-		# 	respond_with keypair
+		if params[:search]
+			keypair = Pair.where(key: params[:search])
+			respond_with keypair
 		# else
 		# 	# alert("Pair not found! Enter your phrase to translate at the top!")
-		# end
-	end
-
-	def new
-		@pair = Pair.new
+		end
 	end
 
 	def create
@@ -20,10 +16,6 @@ class PairsController < ApplicationController
 		pig_latin = pair_params[:pig_latin] || PigIt.to_pig_latin(pair_params[:english]) 
 		pair = Pair.create(english: english, pig_latin: pig_latin, key: Faker::Number.number(4))
 		respond_with pair
-	end
-
-	def show
-		@pair = Pair.find(params[:id])	
 	end
 
 	private

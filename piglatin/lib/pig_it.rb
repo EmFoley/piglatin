@@ -20,9 +20,9 @@ module PigIt
 		# TODO: Implement this
 	end
 
-	def self.search(key)
-	  where("key like ?", "%{key}%")
-	end
+	# def self.search(key)
+	#   where("key like ?", "%{key}%")
+	# end
 end
 
 # pig
