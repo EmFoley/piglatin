@@ -17,7 +17,7 @@ class PairsController < ApplicationController
 		if params[:english] != ""
 			english = params[:english]
 			pig_latin = PigIt.to_pig_latin(english) 
-		elsif params[:pig_latin]
+		elsif params[:pig_latin] != ""
 			pig_latin = params[:pig_latin]
 			english = PigIt.to_english(pig_latin) 
 		end	

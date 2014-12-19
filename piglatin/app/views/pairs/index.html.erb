@@ -6,12 +6,13 @@
 			<%= image_tag("RoyalPigReads.jpg")%>
 	</div>
 	<div class="form">
-		<%= form_tag(pairs_path, :id => "first_form") %>
-		<%= label_tag "English to Pig Latin" %>
-		<%= text_field_tag :english %>
-		<%= label_tag "Pig Latin to English" %>
-		<%= text_field_tag :pig_latin %>
-		<%= submit_tag "Translate, please!" %>
+		<%= form_for(@pair, :id => "first_form") do |f| %>
+		<%= f.label "English to Pig Latin" %>
+		<%= f.text_field :english %>
+		<%= f.label "Pig Latin to English" %>
+		<%= f.text_field :pig_latin %>
+		<%= f.submit "Translate, please!" %>
+		<% end %>
 	</div>
 
 	<div id="translations">
