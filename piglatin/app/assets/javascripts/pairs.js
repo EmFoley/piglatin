@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 
-	$('#new_pair').on('submit', function(e){
+	$('#first_form').on('submit', function(e){
 		e.preventDefault()
 		  $.ajax({
 		  	url: '/pairs',

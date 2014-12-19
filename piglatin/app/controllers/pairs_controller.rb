@@ -1,3 +1,5 @@
+require 'pry'
+
 class PairsController < ApplicationController
 	respond_to :json
 
@@ -12,8 +14,13 @@ class PairsController < ApplicationController
 	end
 
 	def create
-		english = pair_params[:english] || PigIt.to_english(pair_params[:pig_latin]) 
-		pig_latin = pair_params[:pig_latin] || PigIt.to_pig_latin(pair_params[:english]) 
+		if params[:english] != ""
+			english = params[:english]
+			pig_latin = PigIt.to_pig_latin(english) 
+		elsif params[:pig_latin]
+			pig_latin = params[:pig_latin]
+			english = PigIt.to_english(pig_latin) 
+		end	
 		pair = Pair.create(english: english, pig_latin: pig_latin, key: Faker::Number.number(4))
 		render :json => pair.to_json
 	end
