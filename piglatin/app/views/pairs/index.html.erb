@@ -20,7 +20,7 @@
 	</div>
 	<div id="key_entry">
 		<p>Enter the key in here, my friend, for translations you'd like to see again!</p>
-		<%= form_tag(pairs_path, :method => 'get') do %>
+		<%= form_tag(pairs_path, :id => "key_form") do %>
 		<%= text_field_tag :search, params[:search]	%>
 		<%= submit_tag "What was that pair again?" %>
 		<% end %>

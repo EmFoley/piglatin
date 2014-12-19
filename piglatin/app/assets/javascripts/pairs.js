@@ -7,7 +7,6 @@ $(document).ready(function(){
 		  	url: '/pairs',
 		  	type: 'POST',
 		  	data: $(this).serialize(), 
-		  	beforeSend: setHeader
 		  })
   		  .done(function(response) {
 
@@ -17,9 +16,6 @@ $(document).ready(function(){
                
   		  })  
   		  
-  		  function setHeader(xhr) {
-  		  	xhr.setRequestHeader("Accept", "application/json");
-  		  }
 	
 		});
 

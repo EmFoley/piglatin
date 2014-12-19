@@ -24,7 +24,7 @@ module PigIt
 	end
 
 	def to_english(sentence)
-		sentence.split(/\s/).map { |x| anglify(x)}.join("")
+		sentence.split(/\s/).map { |x| anglify(x)}.join(" ")
 	end
 end
 
